@@ -9,16 +9,17 @@
     <tr></tr>
     <th>name</th>
     <th><%= @user.name %></th>
-    <th>Opinion</th>
-    <th><%= @user.introdaction %></th>
-    
+    <th>Introduction</th>
+<!--introductionが入る-->
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-secondary" %>
    </table>
-   
+
   </div>
-  
+
   <!--投稿Booksの部分-->
-<h1>Books</h1>
 <table class="table table-striped">
+<h1>Books</h1>
  <thead>
   <tr>
     <th>Title</th>
@@ -36,7 +37,7 @@
     <% end %>
    </td>
    <td><%=link_to "", user_path(@user) %></td>
-   
+
 <!--本のタイトル-->
    <td>
     <%= link_to book_path(book) do %>
