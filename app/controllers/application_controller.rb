@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # sign_in後はユーザー詳細画面へ
   def after_sign_in_path_for(resource)
-    user_path(resource)
+    user_path(current_user.id)
   end
 
   # sign_out後はTop画面へ
