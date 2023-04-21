@@ -11,22 +11,33 @@
   </head>
 
   <body>
-    <header>
-      <% if user_signed_in? %>
-      <br>
-        <%= link_to "Home", user_path(current_user.id) %>
-        <%= link_to "Users", users_path %>
-        <%= link_to "Books", books_path %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-
-      <% else %>
-      <br>
-        <%= link_to "Home", root_path %>
-        <%= link_to "About", about_path %>
-        <%= link_to "Sign up", new_user_registration_path %>
-        <%= link_to "Log in", new_user_session_path %>
-      <% end %>
-    </header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container" style="background-color: dark;">
+   <div class="row">
+      <header>
+        <% if user_signed_in? %>
+        <br>
+          <%= link_to "Bookers", root_path %>
+          <%= link_to user_path(current_user.id) do %>
+            <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+            "Home"
+          <% end %>
+          <%= link_to "Users", users_path %>
+          <%= link_to "Books", books_path %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  
+        <% else %>
+        <br>
+          <%= link_to "Bookers", root_path %>
+          <%= link_to "Home", root_path %>
+          <%= link_to "About", about_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Log in", new_user_session_path %>
+        <% end %>
+      </header>
+    </div>
+  </div>
+</nav>
     <%= yield %>
     <footer>
       <p>CopyRight Infratop.inc</p>
