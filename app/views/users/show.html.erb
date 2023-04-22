@@ -3,7 +3,7 @@
 <div class="container">
  <div class="row">
   <div class="col-md-3">
-   <%= render 'user', user: @user %>
+   <%= render 'user', user: @user, book: @book %>
   </div>
 
   <!--投稿Books一覧の部分-->
@@ -33,6 +33,7 @@
         <%= link_to book_path(book) do %>
           <%= book.title %>
         <% end %>
+          <%= book.body %>
         <% end %>
        </td>
       </tr>

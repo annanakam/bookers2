@@ -1,19 +1,18 @@
 <h2>Users info</h2>
-     <table class="table">
-      <tr>
-      <th>name</th>
-      <th><%= @user.name %></th>
-      </tr>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <%= form_with model: @user do |f| %>
+        <label for="InputName">Name</label>
+        <%= f.text_field :name, autofocus: true, id:"InputName", placeholder:"名前"%>
   <!--imageを挿入できるようにimageボタンを作成-->
+        <label for="user_profile_image">Image</label>
+        <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*"
 
-
-  <!--introductionが入る-->
-      <tr>
-      <th>introduction</th>
-      <th><%= @user.introduction %></th>
-      </tr>
-     </table>
-
-
+#   <!--introductionが入る-->
+        <label for="user_introduction">Introduction</label>
+        <%= f.text_area :introduction, autofocus: true, id:"InputIntriduction", placeholder: "自己紹介" %>
+    </div>
+  </div>
+</div>
 

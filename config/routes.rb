@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # ↓要るやつ、不要なやつ確認する
 
   resources :users, only: [:show, :edit, :update, :index]
-  resources :books, only: [:new, :index, :show, :edit, :create]
+  resources :books, only: [:new, :index, :show, :edit, :create, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
