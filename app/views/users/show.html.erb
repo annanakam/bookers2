@@ -1,9 +1,10 @@
 <!--ユーザー情報-->
 
 <div class="container">
+ <%= flash[:notice] %>
  <div class="row">
   <div class="col-md-3">
-   <%= render 'user', user: @user, book: @book %>
+   <%= render 'info', user: @user, book: @book %>
   </div>
 
   <!--投稿Books一覧の部分-->
