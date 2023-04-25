@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :books, dependent: :destroy
+  
+  validates :introduction, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
+  
 
   # プロフィール画像を保存できるように設定
   has_one_attached :profile_image
